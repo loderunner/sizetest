@@ -95,8 +95,8 @@ static int recursive_getattr(const char* path, struct stat* stbuf, dir_t* cur_di
     }
     
     unsigned long long counter = 0;
-    unsigned long maxlen = Base64encode_len(sizeof(counter));
-    char name[maxlen];
+//    unsigned long maxlen = Base64encode_len(sizeof(counter));
+    char name[64];
     char* c = name;
     
     do
@@ -197,8 +197,8 @@ sizetest_readdir(const char *path, void *buf, fuse_fill_dir_t filler,
 //    if (cur_dir != NULL)
     {
         unsigned long long counter = 0;
-        unsigned long maxlen = Base64encode_len(sizeof(counter));
-        char name[maxlen];
+//        unsigned long maxlen = Base64encode_len(sizeof(counter));
+        char name[64];
         
         for (unsigned long long i = 0; i < context.number_of_dirs; i++)
         {
